@@ -1,0 +1,19 @@
+.bePartButton {
+  background-color: white !important;
+  color: #1c609c;
+  border-color: white !important;
+  font-weight: 500;
+  border-radius: 20px;
+  width: 200px;
+  font-size: 20px;
+}
+
+.bePartButton:hover {
+  background-color: rgb(223, 219, 219) !important;
+  color: #1c609c;
+}
+
+.bePartButton:focus {
+  background-color: rgb(223, 219, 219) !important;
+  color: #1c609c;
+}

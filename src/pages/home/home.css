@@ -1,0 +1,169 @@
+.home {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.home-bg-img {
+  background-image: url('/public/assets/images/home-bg-image.png');
+  width: 102%;
+  height: auto;
+  background-repeat: round;
+  margin-top: -14px;
+  margin-left: -5px;
+  padding-bottom: 30px;
+}
+
+.home-container {
+  padding: 50px 100px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-text {
+  width: 480px;
+  text-align: center;
+}
+
+.home-text > h1 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.home-twhite {
+  color: white;
+}
+
+.home-torange {
+  color: #ed4c34;
+}
+
+.home-know-more {
+  display: flex; 
+  justify-content: center; 
+  margin-top: 35px;
+}
+
+.home-know-more > span {
+  text-align: center; 
+  color: white;
+}
+
+.home-know-more > span > img {
+  width: 70px;
+}
+
+.home-bg-blue {
+  background-color: #072348;
+  height: auto;
+}
+
+.home-container-sections {
+  text-align: center;
+  padding: 40px 80px 80px;
+  color: white;
+}
+
+.home-container-sections > h1 {
+  margin: 0 auto;
+  width: 45%;
+  font-weight: 700;
+}
+
+.home-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-white-card {
+  width: 25%;
+  height: 350px;
+  background-color: white;
+  border-radius: 10px;
+  color: #0a2240;
+}
+
+.home-card-left {
+  margin-right: -20px;
+  padding: 10px 35px 10px 40px;
+}
+
+.home-card-left > h4 {
+  font-weight: bolder;
+  color: #ed4c34;
+  margin-top: 5px;
+}
+
+.home-card-left > ul {
+  text-align: left;
+}
+
+.home-card-right {
+  margin-left: -20px;
+  padding: 10px 40px 10px 35px;
+}
+
+.home-red-card {
+  width: 30%;
+  height: 450px;
+  background-color: #ed4c34;
+  border-radius: 10px;
+  z-index: 1;
+  padding: 5px 30px;
+}
+
+.home-red-card > h4 {
+  font-weight: bolder;
+  color: white;
+  margin-top: 5px;
+}
+
+.home-red-card > ul {
+  text-align: left;
+  font-size: 22px;
+}
+
+.home-line-divider-orange {
+  height: 5px !important;
+  width: 80px;
+  margin: 0 auto;
+  color: #ed4c34 !important;
+  opacity: 1 !important;
+}
+
+.home-line-divider-white {
+  height: 5px !important;
+  width: 80px;
+  margin: 0 auto;
+  color: white !important;
+  opacity: 1 !important;
+}
+
+.home-card-right > h4 {
+  font-weight: bolder;
+  color: #ed4c34;
+  margin-top: 5px;
+}
+
+.home-card-right > ul {
+  text-align: left;
+}
+
+.home-steps-with-us {
+  display: flex;
+  justify-content: space-around;
+  padding: 0px 60px;
+  align-items: center;
+}
+
+.home-steps-with-us > span {
+  width: 130px;
+  font-size: 20px;
+}
+
+.home-steps-arrow {
+  color: #ed4c34;
+  font-weight: bolder;
+}
