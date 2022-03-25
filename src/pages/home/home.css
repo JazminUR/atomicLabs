@@ -167,3 +167,46 @@
   color: #ed4c34;
   font-weight: bolder;
 }
+
+/* Jaz */
+.home-benefits-images {
+  padding: 20px 40px 0px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-benefits-images div:first-child > img {
+  margin-top: 0px;
+}
+
+.home-benefits-list {
+  text-align: left;
+  font-weight: bold;
+  font-size: 20px;
+  width: 80%;
+} 
+
+.home-benefits-images div:nth-child(2) > ul {
+  padding-top: 40px;
+}
+
+.home-benefits-images div:nth-child(3) > ul {
+  padding-top: 60px;
+}
+
+.home-benefits-list > img {
+  width: 20px;
+}
+
+.home-last-be-part-btn {
+  text-align: center;
+  padding-bottom: 80px;
+}
+
+.home-table-container {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 70px;
+}
+

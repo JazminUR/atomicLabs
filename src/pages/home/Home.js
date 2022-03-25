@@ -1,7 +1,9 @@
 import React from "react";
 import BePartButtonComponent from "../../components/actionButtons/bePartButton/BePartButton";
 import NavbarComponent from "../../components/navbar/Navbar";
+import FooterComponent from "../../components/footer/Footer";
 import "./home.css";
+import TableComponent from "../../components/table/Table";
 
 const HomeComponent = () => {
   return (
@@ -104,7 +106,53 @@ const HomeComponent = () => {
           <br/><br/><br/>
           <BePartButtonComponent/>
         </div>
+
+        <div className="home-container-sections">
+          <h1>
+            ¿POR QUÉ 
+            <span className="home-torange"> ATOMIC?</span>
+          </h1>
+          <br/><br/>
+          <div className="home-benefits-container">
+            <div className="home-benefits-images">
+              <div>
+                <img alt="imagen astronauta" src="/assets/images/home-astronaut-img.png"/>
+                <ul className="home-benefits-list">
+                  <img alt="palomita" src="/assets/images/home-check-tiny.png"/>
+                  <span> Usamos las tecnologías más modernas. </span><br/>
+                  <img alt="palomita" src="/assets/images/home-check-tiny.png"/> 
+                  <span> Innovamos y creamos proyectos retadores.</span>
+                </ul>
+              </div>
+              <div>
+                <img alt="imagen persona" src="/assets/images/home-person-img.png"/>
+                <ul className="home-benefits-list">
+                  <img alt="palomita" src="/assets/images/home-check-tiny.png"/>
+                  <span> ¡Trabajamos en equipo rumbo al éxito!</span><br/>
+                  <img alt="palomita" src="/assets/images/home-check-tiny.png"/> 
+                  <span> No tenemos código de vestimenta</span>
+                </ul>
+              </div>
+              <div>
+                <img alt="imagen astronauta2" src="/assets/images/home-astronaut2-img.png"/>
+                <ul className="home-benefits-list">
+                  <img alt="palomita" src="/assets/images/home-check-tiny.png"/>
+                  <span> Realizamos actividades para tu bienestar.</span><br/>
+                  <img alt="palomita" src="/assets/images/home-check-tiny.png"/> 
+                  <span> ¡Tenemos un parque frente a la oficina!</span>
+                </ul>
+              </div> 
+            </div>
+          </div>
+        </div>
+        <div className="home-table-container">
+          <TableComponent/>
+        </div>
+        <div className="home-last-be-part-btn">
+          <BePartButtonComponent/>
+        </div>
       </div>
+      <FooterComponent/>
     </div>
   );
 };

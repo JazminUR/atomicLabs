@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, BrowserRouter, Routes } from "react-router-dom";
 import HomeComponent from "./pages/home/Home";
-import AboutComponent from "./pages/about/About";
+import ContactUsComponent from "./pages/contact/ContactUs";
 import './App.css';
 
 const App = () => {
@@ -15,8 +15,8 @@ const App = () => {
         />
         <Route
           exact 
-          path="/about"
-          element={(<AboutComponent/>)}
+          path="/contact"
+          element={(<ContactUsComponent/>)}
         />
       </Routes>
     </BrowserRouter>

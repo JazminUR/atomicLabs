@@ -1,0 +1,28 @@
+.home-footer {
+  background-color: black;
+  width: 100vw;
+  height: 100px;
+  color: white;
+  font-weight: bolder;
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.home-footer-privacity {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  align-items: center;
+}
+
+.home-footer-privacity span:first-child {
+  text-decoration: underline;
+}
+
+.home-footer-privacity > span > img {
+  margin-right: 30px;
+}
