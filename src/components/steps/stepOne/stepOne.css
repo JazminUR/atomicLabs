@@ -1,0 +1,28 @@
+.step-one {
+  width: 100%;
+}
+
+.step-one-title-container {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.step-one-title-container > h1 {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.step-one-subtitle {
+  font-size: 20px;
+  margin-top: 40px;
+}
+
+.step-one-title-container > img {
+  width: 40px;
+  margin-right: 15px;
+}
+
+.step-one-form {
+  padding-top: 35px;
+}

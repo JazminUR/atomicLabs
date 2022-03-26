@@ -2,3 +2,27 @@
   background-color: #072348;
   height: 100vh;
 }
+
+.contact-us-container {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-us-button {
+  margin-top: 60px;
+  float: right;
+  width: 160px;
+  border-radius: 15px;
+  background-color: #ed4c34;
+  border-color: #ed4c34;
+}
+
+.contact-us-button:hover {
+  background-color: #da6f5f;
+  border-color: #da6f5f;
+}
+
+.contact-us-button:disabled {
+  background-color: #a59892 !important;
+  border-color: #a59892 !important;
+}

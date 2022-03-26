@@ -1,0 +1,13 @@
+.slide-bar-container {
+  width: 100%;
+}
+
+.slide-bar-element > .progress-bar {
+  background-color: #ed4c34 !important; 
+}
+
+.slide-bar-steps {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 10px;
+}
