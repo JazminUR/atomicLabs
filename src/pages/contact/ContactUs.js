@@ -5,6 +5,8 @@ import FooterComponent from "../../components/footer/Footer";
 import SlideBarComponent from "../../components/slideBar/SlideBar";
 import StepOneComponent from "../../components/steps/stepOne/StepOne";
 import { Button } from "react-bootstrap";
+import StepTwoComponent from "../../components/steps/stepTwo/StepTwo";
+import ConfirmComponent from "../../components/confirm/Confirm";
 
 const ContactUsComponent = () => {
   const [step, setStep] = useState("first");
@@ -12,7 +14,12 @@ const ContactUsComponent = () => {
     names: "", 
     lastNames: "", 
     phoneNumber: "",
-  })
+  });
+  const [confirmData, setConfirmData] = useState({
+    active: false,
+    label: "",
+  });
+
   const handleChange = (event) => {
     const targetName = event.target.name;
     const value = event.target.value;
@@ -39,6 +46,10 @@ const ContactUsComponent = () => {
         return 20;
       case "second":
         return 40;
+      case "third":
+        return 60;
+      case "four":
+        return 100;
       default:
         return 0;
     }
@@ -49,16 +60,26 @@ const ContactUsComponent = () => {
       setStep("second");
     }
     else if (step === "second") {
-      setStep("third");
+      setConfirmData({
+        active: true,
+        label: "Te hemos enviado el código al número que nos proporcionaste"
+      })
+      setTimeout(() => {
+        setStep("third");
+        setConfirmData({
+          active: false,
+          label: "",
+        });
+      }, 1500);
     }
   }
 
   const renderFormByStep = (currentStep, setCurrentStep) => {
     switch (currentStep) {
       case "first":
-        return <StepOneComponent onChange={handleChange}/>;
+        return <StepOneComponent onChange={handleChange} data={data}/>;
       case "second":
-        return "Segundo paso";
+        return <StepTwoComponent onChange={handleChange} changeStep={setStep} data={data}/>;
       case "third":
         return "Tercer paso";
       case "four":
@@ -79,20 +100,22 @@ const ContactUsComponent = () => {
     }
   }
 
-  return (
+  return confirmData.active && confirmData.label ? (
+    <ConfirmComponent label={confirmData.label}/>
+  ) : (
     <div>
       <div className="contact-us-bg-blue">
         <NavbarComponent/>
         <div className="contact-us-container">
           <div style={{ width: "800px" }}>
-            <SlideBarComponent progress={progressByStep(step)}/>
+            <SlideBarComponent progress={progressByStep(step)} currentStep={step}/>
             {renderFormByStep(step, setStep)}
             <Button 
               className="contact-us-button" 
               disabled={validateFullData(step)}
               onClick={() => handleChangeStep()}
             >
-              Enviar
+              {step === "first" ? "Enviar" : "Continuar"}
             </Button>
           </div>
           <div style={{ width: "450px" }}>

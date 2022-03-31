@@ -9,3 +9,19 @@
 .grl-input-width {
   width: 400px !important;
 }
+
+.grl-step-title {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.grl-step-title > h1 {
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.grl-step-title > img {
+  width: 40px;
+  margin-right: 15px;
+}

@@ -1,0 +1,25 @@
+.step-two {
+  color: white;
+}
+
+.step-two > span {
+  cursor: pointer;
+}
+
+.step-two-subtitle {
+  margin-top: 35px;
+}
+
+.step-two-subtitle > p {
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
+.step-two-subtitle > small {
+  font-weight: 500;
+}
+
+.step-two-subtitle > form {
+  margin-top: 35px;
+}

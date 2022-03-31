@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import "./stepOne.css";
 import { Form } from "react-bootstrap";
 
-const StepOneComponent = ({onChange}) => {
+const StepOneComponent = ({onChange, data}) => {
   return (
     <div className="step-one">
-      <div className="step-one-title-container">
+      <div className="grl-step-title">
         <img alt="Paso 1 titulo" src="/assets/images/step-one-title.png"/>
         <h1 className="grl-twhite">
             TE QUEREMOS
@@ -23,6 +23,7 @@ const StepOneComponent = ({onChange}) => {
               placeholder="Agrega tu nombre"
               onChange={(e) => onChange(e)}
               name="names"
+              value={data.names}
             />
           </Form.Group>
 
@@ -34,6 +35,7 @@ const StepOneComponent = ({onChange}) => {
               placeholder="Agrega tus apellidos"
               onChange={(e) => onChange(e)}
               name="lastNames"
+              value={data.lastNames}
             />
           </Form.Group>
         </Form>

@@ -1,0 +1,16 @@
+.confirm-component {
+  background-color: #072348;
+  height: 100vh;
+  display: flex;
+}
+
+.confirm-component-child {
+  margin: auto;
+  text-align: center;
+}
+
+.confirm-component-child > p {
+  color: white;
+  font-size: 20px;
+  width: 300px;
+}
