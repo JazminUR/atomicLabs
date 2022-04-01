@@ -2,11 +2,34 @@ import React from "react";
 import "./stepThree.css";
 import { Form } from "react-bootstrap";
 
-const StepThreeComponent = ({onChange, changeStep, data, editPhone}) => {
+const StepThreeComponent = ({onChange, changeStep, data, editPhone, setConfirmData}) => {
 
   const handleEditPhone = () => {
     changeStep("second");
     editPhone(true);
+  }
+  const handleResendCode = () => {
+    setConfirmData({
+      active: true, 
+      label: "Te estamos enviando el código", 
+      imageUrl: "/assets/images/avion.png", 
+      imageStyle: {width: "250px"}});
+    setTimeout(() => {
+      setConfirmData({
+        active: true, 
+        label: "Te hemos enviado el código al número que nos proporcionaste", 
+        imageUrl: "/assets/images/confirm-done.png",
+        imageStyle: null
+      });
+      setTimeout(() => {
+        setConfirmData({
+          active: false, 
+          label: "", 
+          imageUrl: "",
+          imageStyle: null
+        });
+      }, 1500);
+    }, 1500);
   }
 
   return (
@@ -45,7 +68,11 @@ const StepThreeComponent = ({onChange, changeStep, data, editPhone}) => {
             />
           </Form.Group>
         </Form>
-        <p>¿No recibiste el código? Reenviar código</p>
+        <p>¿No recibiste el código? 
+          <strong onClick={() => handleResendCode()}>
+            {" Reenviar código"}
+          </strong>
+        </p>
       </div>
     </div>
   );

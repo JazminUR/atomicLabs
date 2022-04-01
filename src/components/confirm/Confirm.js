@@ -1,11 +1,11 @@
 import React from 'react';
 import "./confirm.css";
 
-const ConfirmComponent = ({label}) => {
+const ConfirmComponent = ({label, imageUrl, imageStyle}) => {
   return (
     <div className="confirm-component">
       <div className="confirm-component-child">
-        <img alt="confirmación icon" src="/assets/images/confirm-done.png"/>
+        <img alt="confirmación icon" src={imageUrl} style={imageStyle}/>
         <p>{label}</p>
       </div>
     </div>

@@ -1,0 +1,9 @@
+.step-four-check > input:focus {
+  background-color: #ed4c34 !important;
+  color: #ed4c34 !important;
+}
+
+.step-four-check > input:checked {
+  background-color: #ed4c34 !important;
+  color: #ed4c34 !important;
+}

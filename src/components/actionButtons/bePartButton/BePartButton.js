@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 import "./bePartButton.css";
 
 const BePartButtonComponent = () => {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleClick = () => {
     navigate("/contact");

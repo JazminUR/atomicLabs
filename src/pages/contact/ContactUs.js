@@ -8,6 +8,8 @@ import { Button } from "react-bootstrap";
 import StepTwoComponent from "../../components/steps/stepTwo/StepTwo";
 import ConfirmComponent from "../../components/confirm/Confirm";
 import StepThreeComponent from "../../components/steps/stepThree/StepThree";
+import StepFourComponent from "../../components/steps/stepFour/StepFour";
+import { useNavigate } from 'react-router-dom';
 
 const ContactUsComponent = () => {
   const [editPhone, setEditPhone] = useState(false);
@@ -17,11 +19,15 @@ const ContactUsComponent = () => {
     lastNames: "", 
     phoneNumber: "",
     codeNumber: "",
+    acceptTerms: false,
   });
   const [confirmData, setConfirmData] = useState({
+    imageStyle: null,
+    imageUrl: "",
     active: false,
     label: "",
   });
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     const targetName = event.target.name;
@@ -40,6 +46,8 @@ const ContactUsComponent = () => {
         return "Continuar";
       case "third":
         return "Validar código";
+      case "four":
+        return "Enviar"
       default:
         return "";
     };
@@ -53,6 +61,8 @@ const ContactUsComponent = () => {
         return !(data.names && data.lastNames && data.phoneNumber);
       case "third":
         return !(data.names && data.lastNames && data.phoneNumber && data.codeNumber);
+      case "four":
+        return !(data.names && data.lastNames && data.phoneNumber && data.codeNumber && data.acceptTerms);
       default:
         return true;
     }
@@ -79,17 +89,41 @@ const ContactUsComponent = () => {
     }
     else if (step === "second") {
       setConfirmData({
+        imageUrl: "/assets/images/confirm-done.png",
         active: true,
-        label: "Te hemos enviado el código al número que nos proporcionaste"
+        label: "Te hemos enviado el código al número que nos proporcionaste",
+        imageStyle: null,
       })
       setTimeout(() => {
         setStep("third");
         setConfirmData({
+          imageUrl: "",
           active: false,
           label: "",
+          imageStyle: null,
         });
         setEditPhone(false);
       }, 1500);
+    }
+    else if (step === "third") {
+      setConfirmData({
+        imageUrl: "/assets/images/confirm-done.png",
+        active: true,
+        label: "Hemos validado el código",
+        imageStyle: null,
+      });
+      setTimeout(() => {
+        setStep("four");
+        setConfirmData({
+          imageUrl: "",
+          active: false,
+          label: "",
+          imageStyle: null,
+        });
+      }, 1500);
+    }
+    else if (step === "four") {
+      navigate("/last");
     }
   }
 
@@ -111,9 +145,14 @@ const ContactUsComponent = () => {
                 changeStep={setStep} 
                 data={data} 
                 editPhone={setEditPhone}
+                setConfirmData={setConfirmData}
               />;
       case "four":
-        return "Cuarto paso";
+        return <StepFourComponent
+                changeStep={setStep}
+                data={data}
+                onChange={handleChange}
+        />;
       default:
         return "Paso desconocido";
     }
@@ -126,14 +165,18 @@ const ContactUsComponent = () => {
       case "second":
         return <img alt="imagen 2" src="/assets/images/step-two-img.png" style={{ marginTop: "-80px", width: "100%"}}/>;
       case "third":
-        return <img alt="imagen 2" src="/assets/images/step-two-img.png" style={{ marginTop: "-80px", width: "100%"}}/>
+        return <img alt="imagen 3" src="/assets/images/step-two-img.png" style={{ marginTop: "-80px", width: "100%"}}/>
       default:
-        return <img alt="imagen 1" src="/assets/images/step-one-img.png"/>;
+        return <img alt="imagen 4" src="/assets/images/step-four-img.png" style={{ marginLeft: "20px" }}/>;
     }
   }
 
-  return confirmData.active && confirmData.label ? (
-    <ConfirmComponent label={confirmData.label}/>
+  return confirmData.active && confirmData.label && confirmData.imageUrl ? (
+    <ConfirmComponent 
+      label={confirmData.label} 
+      imageUrl={confirmData.imageUrl}
+      imageStyle={confirmData.imageStyle}
+    />
   ) : (
     <div>
       <div className="contact-us-bg-blue">

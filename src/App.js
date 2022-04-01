@@ -3,6 +3,7 @@ import { Route, BrowserRouter, Routes } from "react-router-dom";
 import HomeComponent from "./pages/home/Home";
 import ContactUsComponent from "./pages/contact/ContactUs";
 import './App.css';
+import LastSectionComponent from "./pages/lastSection/LastSection";
 
 const App = () => {
   return (
@@ -17,6 +18,11 @@ const App = () => {
           exact 
           path="/contact"
           element={(<ContactUsComponent/>)}
+        />
+        <Route
+          exact 
+          path="/last"
+          element={(<LastSectionComponent/>)}
         />
       </Routes>
     </BrowserRouter>

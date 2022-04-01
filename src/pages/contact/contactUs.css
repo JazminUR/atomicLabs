@@ -1,6 +1,8 @@
 .contact-us-bg-blue {
   background-color: #072348;
-  height: 100vh;
+  padding-bottom: 80px;
+  min-height: 100vh;
+  height: auto;
 }
 
 .contact-us-container {
