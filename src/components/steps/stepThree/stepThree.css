@@ -1,0 +1,32 @@
+.step-three {
+  color: white;
+}
+
+.step-three-subtitle {
+  margin-top: 35px;
+}
+
+.step-three-subtitle > p {
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
+.step-three-subtitle > span {
+  font-weight: 400;
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
+.step-three-subtitle > small {
+  font-weight: 500;
+}
+
+.step-three-subtitle > form {
+  margin-top: 35px;
+}
+
+.step-three-pen {
+  margin-left: 20px;
+  width: 20px;
+}

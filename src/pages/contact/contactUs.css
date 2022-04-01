@@ -22,6 +22,11 @@
   border-color: #da6f5f;
 }
 
+.contact-us-button:focus {
+  background-color: #c03722;
+  border-color: #c03722;
+}
+
 .contact-us-button:disabled {
   background-color: #a59892 !important;
   border-color: #a59892 !important;

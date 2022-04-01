@@ -7,13 +7,16 @@ import StepOneComponent from "../../components/steps/stepOne/StepOne";
 import { Button } from "react-bootstrap";
 import StepTwoComponent from "../../components/steps/stepTwo/StepTwo";
 import ConfirmComponent from "../../components/confirm/Confirm";
+import StepThreeComponent from "../../components/steps/stepThree/StepThree";
 
 const ContactUsComponent = () => {
+  const [editPhone, setEditPhone] = useState(false);
   const [step, setStep] = useState("first");
   const [data, setData] = useState({
     names: "", 
     lastNames: "", 
     phoneNumber: "",
+    codeNumber: "",
   });
   const [confirmData, setConfirmData] = useState({
     active: false,
@@ -29,12 +32,27 @@ const ContactUsComponent = () => {
     });
   }
 
+  const labelButtonByStep = (currentStep) => {
+    switch (currentStep) {
+      case "first":
+        return "Enviar";
+      case "second":
+        return "Continuar";
+      case "third":
+        return "Validar código";
+      default:
+        return "";
+    };
+  }
+
   const validateFullData = (currentStep) => {
     switch (currentStep) {
       case "first":
         return !(data.names && data.lastNames);
       case "second":
         return !(data.names && data.lastNames && data.phoneNumber);
+      case "third":
+        return !(data.names && data.lastNames && data.phoneNumber && data.codeNumber);
       default:
         return true;
     }
@@ -70,6 +88,7 @@ const ContactUsComponent = () => {
           active: false,
           label: "",
         });
+        setEditPhone(false);
       }, 1500);
     }
   }
@@ -79,9 +98,20 @@ const ContactUsComponent = () => {
       case "first":
         return <StepOneComponent onChange={handleChange} data={data}/>;
       case "second":
-        return <StepTwoComponent onChange={handleChange} changeStep={setStep} data={data}/>;
+        return <StepTwoComponent 
+                onChange={handleChange} 
+                changeStep={setStep} 
+                data={data}
+                toEdit={editPhone}
+                setEdit={setEditPhone}
+              />;
       case "third":
-        return "Tercer paso";
+        return <StepThreeComponent 
+                onChange={handleChange} 
+                changeStep={setStep} 
+                data={data} 
+                editPhone={setEditPhone}
+              />;
       case "four":
         return "Cuarto paso";
       default:
@@ -95,6 +125,8 @@ const ContactUsComponent = () => {
         return <img alt="imagen 1" src="/assets/images/step-one-img.png"/>;
       case "second":
         return <img alt="imagen 2" src="/assets/images/step-two-img.png" style={{ marginTop: "-80px", width: "100%"}}/>;
+      case "third":
+        return <img alt="imagen 2" src="/assets/images/step-two-img.png" style={{ marginTop: "-80px", width: "100%"}}/>
       default:
         return <img alt="imagen 1" src="/assets/images/step-one-img.png"/>;
     }
@@ -115,7 +147,7 @@ const ContactUsComponent = () => {
               disabled={validateFullData(step)}
               onClick={() => handleChangeStep()}
             >
-              {step === "first" ? "Enviar" : "Continuar"}
+              {labelButtonByStep(step)}
             </Button>
           </div>
           <div style={{ width: "450px" }}>

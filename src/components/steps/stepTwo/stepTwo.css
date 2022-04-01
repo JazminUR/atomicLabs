@@ -2,10 +2,6 @@
   color: white;
 }
 
-.step-two > span {
-  cursor: pointer;
-}
-
 .step-two-subtitle {
   margin-top: 35px;
 }
@@ -23,3 +19,4 @@
 .step-two-subtitle > form {
   margin-top: 35px;
 }
+

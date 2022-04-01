@@ -2,15 +2,21 @@ import React from "react";
 import "./stepTwo.css";
 import { Form } from "react-bootstrap";
 
-const StepTwoComponent = ({onChange, changeStep, data}) => {
+const StepTwoComponent = ({onChange, changeStep, data, toEdit, setEdit}) => {
+
+  const handleBack = () => {
+    setEdit(false);
+    changeStep("first");
+  }
+
   return (
     <div className="step-two">
       <br/>
-      <span onClick={() => changeStep("first")}>&lt; Regresar</span>
+      <span className="grl-c-pointer" onClick={() => handleBack()}>&lt; Regresar</span>
       <div className="grl-step-title">
         <img alt="Paso 2 titulo" src="/assets/images/step-two-title.png"/>
         <h1 className="grl-twhite">
-            VALIDA TU
+            {toEdit ? "EDITA" : "VALIDA"} TU
             <span className="grl-torange"> CELULAR</span>
           </h1>
       </div>
